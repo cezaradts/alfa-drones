@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modelos de Drones | Alfa Drones</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .produtos {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .produtos h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .grid-produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .produto {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .produto img {
+      max-width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .produto h3 {
+      margin: 15px 0 10px;
+    }
+
+    .produto p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .produto button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <img src="images/logo.png" alt="Alfa Drones" class="logo">
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="modelos.html">Modelos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<section class="produtos">
+  <h2>Nossos Modelos de Drones</h2>
+  <div class="grid-produtos">
+    <div class="produto">
+      <img src="images/drone1.jpg" alt="Drone Phantom 4">
+      <h3>DJI Phantom 4 Pro</h3>
+      <p>Alta precisão, 30 minutos de voo, câmera 4K. Ideal para mapeamento e inspeções.</p>
+      <button>Solicitar Orçamento</button>
+    </div>
+    <div class="produto">
+      <img src="images/drone2.jpg" alt="Drone Mavic">
+      <h3>DJI Mavic 3 Enterprise</h3>
+      <p>Compacto, potente e ideal para agricultura de precisão e levantamentos técnicos.</p>
+      <button>Solicitar Orçamento</button>
+    </div>
+    <div class="produto">
+      <img src="images/drone3.jpg" alt="Drone Agras">
+      <h3>DJI Agras T30</h3>
+      <p>Drone agrícola para pulverização eficiente e segura com inteligência embarcada.</p>
+      <button>Solicitar Orçamento</button>
+    </div>
+    <div class="produto">
+      <img src="images/drone4.jpg" alt="Drone FPV">
+      <h3>DJI Avata FPV</h3>
+      <p>Imagens cinematográficas em primeira pessoa, ideal para eventos e publicidade.</p>
+      <button>Solicitar Orçamento</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Alfa Drones. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
