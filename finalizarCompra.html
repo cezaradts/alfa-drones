@@ -17,11 +17,42 @@
         </nav>
       </div>
     </header>
-<section class="carrinho">
-      <h2>Itens no Carrinho</h2>
-      <ul id="lista-carrinho"></ul>
-      <p id="total"></p>
-    </section>
+<script>
+      const listaCarrinho = document.getElementById("lista-carrinho");
+      const totalElement = document.getElementById("total");
+      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+      let total = 0;
+
+      function atualizarCarrinho() {
+        listaCarrinho.innerHTML = ""; // Limpa a lista
+        total = 0; // Reinicia o total
+
+        if (carrinho.length === 0) {
+          listaCarrinho.innerHTML = "<li>O carrinho está vazio.</li>";
+          totalElement.textContent = "";
+        } else {
+          carrinho.forEach((item, index) => {
+            const li = document.createElement("li");
+            li.textContent = `${item.modelo} - R$ ${parseFloat(item.preco).toFixed(2).replace(".", ",")}`;
+
+            // Botão para remover o item
+            const removerButton = document.createElement("button");
+            removerButton.textContent = "Remover";
+            removerButton.style.marginLeft = "10px";
+            removerButton.addEventListener("click", () => {
+              carrinho.splice(index, 1); // Remove o item do array
+              localStorage.setItem("carrinho", JSON.stringify(carrinho)); // Atualiza o localStorage
+              atualizarCarrinho(); // Atualiza a lista
+            });
+
+            li.appendChild(removerButton);
+            listaCarrinho.appendChild(li);
+            total += parseFloat(item.preco); // Soma o preço ao total
+          });
+
+          totalElement.textContent = `Total: R$ ${total.toFixed(2).replace(".", ",")}`;
+        }
+      }
     
     <section class="finalizar">
       <h2>Finalizar Compra</h2>
