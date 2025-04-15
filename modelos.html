@@ -123,17 +123,6 @@ O Drone DJI Air 3S Fly More Combo se destaca no mercado por ser uma solução co
       let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
       carrinho.push({ modelo, preco });
       localStorage.setItem("carrinho", JSON.stringify(carrinho));
-    });
-  });
-</script>
-<script>
-  document.querySelectorAll(".add-to-cart").forEach((button) => {
-    button.addEventListener("click", () => {
-      const modelo = button.getAttribute("data-modelo");
-      const preco = button.getAttribute("data-preco");
-      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-      carrinho.push({ modelo, preco });
-      localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
       // Exibe mensagem de confirmação
       alert(`"${modelo}" foi adicionado ao carrinho!`);
