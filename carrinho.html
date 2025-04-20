@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Carrinho | Alfa Drones</title>
+    <title>Finalizar Compra | Alfa Drones</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -11,12 +11,21 @@
       <div class="container">
         <img src="images/logo.png" alt="Alfa Drones" class="logo" />
         <nav>
-          <a href="index.html">Início</a>
-          <a href="modelos.html">Modelos</a>
-          <a href="https://cezaradts.github.io/alfa-drones-flask/index.html">Contato</a>
+          <a href="https://cezaradts.github.io/alfa-drones/index.html">Início</a>
+          <a href="https://cezaradts.github.io/alfa-drones/modelos.html">Continuar Comprando</a>
         </nav>
       </div>
     </header>
+
+
+
+  <main>
+    <section>
+      <h2>Status da API:</h2>
+      <div id="resposta" style="font-weight: bold; color: green;">
+        Aguardando resposta da API...
+      </div>
+    </section>
 
     <section class="carrinho">
       <h2>Itens no Carrinho</h2>
@@ -87,16 +96,11 @@
           alert("O carrinho está vazio. Adicione itens antes de finalizar a compra.");
         } else {
           // Redireciona para a página de finalização de compras
-          window.location.href = "finalizarCompra.html";
+          window.location.href = "https://cezaradts.github.io/alfa-drones-flask/finalizarCompra.html";
         }
       });
       document.body.appendChild(finalizarCompraButton);
-    </script>
-  </body>
-  <footer>
-    <p>© 2025 Alfa Drones. Todos os direitos reservados.</p>
-  </footer>
-  <script>
+    
     // Adiciona a classe ao botão de limpar carrinho
     limparCarrinhoButton.className = "limpar-carrinho";
 
@@ -112,4 +116,25 @@
       alert("Carrinho limpo com sucesso!"); // Mensagem adicional após limpar
     });
   </script>
+</main>
+
+  <footer>
+    <p>&copy; 2025 Alfa Drones</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Verifica se a API está ativa
+    fetch('https://alfa-drones-flask-21.onrender.com/test')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("resposta").innerText = data.mensagem;
+      })
+      .catch(error => {
+        console.error('Erro ao conectar com a API:', error);
+        document.getElementById("resposta").innerText = "Erro ao conectar com a API.";
+        document.getElementById("resposta").style.color = "red";
+      });
+  </script>
+</body>
 </html>
