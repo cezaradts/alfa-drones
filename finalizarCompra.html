@@ -41,6 +41,10 @@
           <input type="text" id="nome" name="nome" required />
           <label for="cpf">CPF:</label>
           <input type="text" id="cpf" name="cpf" required />
+           <label for="whatsapp">Whatsapp:</label>
+          <input type="text" id="whatsapp" name="whatsapp" required />
+          <label for="mail">Email:</label>
+          <input type="text" id="mail" name="mail" required />
           <label for="endereco">Endereço:</label>
           <input type="text" id="endereco" name="endereco" required />
           <label for="cep">CEP:</label>
@@ -155,6 +159,8 @@
     btnFinalizarCompra.addEventListener("click", async () => {
       const nome = document.getElementById("nome").value;
       const cpf = document.getElementById("cpf").value;
+      const whatsapp = document.getElementById("whatsapp").value;
+      const mail = document.getElementById("mail").value;
       const endereco = document.getElementById("endereco").value;
       const cep = document.getElementById("cep").value;
       const forma_pagamento = document.querySelector('input[name="pagamento"]:checked').value;
@@ -162,6 +168,8 @@
       const dadosCompra = {
         nome,
         cpf,
+        whatsapp,
+        mail,
         endereco,
         cep,
         valor_total: parseFloat(totalCompra),
