@@ -52,7 +52,7 @@ section {
   flex-wrap: wrap;
 }
 
-.service, .partner, .professional {
+.service, .partners, .professionals {
   width: 30%;
   padding: 20px;
   margin-bottom: 20px;
@@ -106,13 +106,13 @@ footer {
 
 
 @media (max-width: 768px) {
-  .service, .partner, .professional {
+  .service, .partners, .professionals {
       width: 48%;
   }
 }
 
 @media (max-width: 480px) {
-  .service, .partner, .professional {
+  .service, .partners, .professionals {
       width: 100%;
   }
 }
