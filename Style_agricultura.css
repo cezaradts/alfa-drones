@@ -62,7 +62,7 @@ section {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.service img, partner-card img, professional-card img {
+.service img, .partner-card img, .professional-card img {
   width: 430px;
   height: 250px;
   object-fit: cover;
