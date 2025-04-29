@@ -105,14 +105,32 @@ footer {
 }
 
 
+.partner-card, .professional-card {
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #f1f1f1;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.partner-card img, .professional-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
 @media (max-width: 768px) {
-  .service, .partners, .professionals {
-      width: 48%;
-  }
+    .partner-card, .professional-card {
+        width: 48%;
+    }
 }
 
 @media (max-width: 480px) {
-  .service, .partners, .professionals {
-      width: 100%;
-  }
+    .partner-card, .professional-card {
+        width: 100%;
+    }
 }
